@@ -23,7 +23,7 @@ const currentValue = computed(()=> {
 
 </script>
 <template>
-    <section class="bg-custom-white rounded-xl mb-6 p-4" v-for="comment in currentValue" :key="comment.id">
+    <section class="bg-custom-white rounded-xl m-6 p-4 lg:m-0 lg:mb-6" v-for="comment in currentValue" :key="comment.id">
         <TheNoSearchResultsFound v-if="comment == false" />
         <CurrentFeedback v-else :comment = comment />
     </section>

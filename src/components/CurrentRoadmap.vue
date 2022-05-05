@@ -25,7 +25,7 @@ const props = defineProps({
             <UpVotesButton :upVotesValue="props.comment.upvotes" :commentId="props.comment.id" />
             <div class="flex items-center ml-auto">
                 <span class="mr-2"><img src="@/assets/shared/icon-comments.svg" /></span>
-                <span class="font-bold">{{ props.comment.comments ? props.comment.comments.length : "0"}}</span>
+                <span class="font-bold">{{ props.comment.commentsLenght }}</span>
             </div>
         </div>
     </section>    

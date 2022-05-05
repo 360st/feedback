@@ -24,6 +24,7 @@ if(props.id){
         title: currentEditFeadback.title,
         description: currentEditFeadback.description,
         category: currentEditFeadback.category,
+        commentsLenght: currentEditFeadback.commentsLenght,
         status: currentEditFeadback.status,
         upvotes: currentEditFeadback.upvotes,
         comments: currentEditFeadback.comments
@@ -50,7 +51,7 @@ const add = () => {
 </script>
 <template>
 
-    <div class="max-w-lg m-auto">
+    <div class="max-w-lg p-6 mt-4 lg:m-auto lg:p-0">
         <router-link class="font-bold text-custom-grey flex items-center" :to="{name: 'home'}"><img class="mr-2" src="@/assets/shared/icon-arrow-left.svg" /> <span >Go back</span></router-link>
         <form @submit.prevent="add()">
             <div class="bg-custom-white rounded-xl mt-10 p-6 pt-12 relative">

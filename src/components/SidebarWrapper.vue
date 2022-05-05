@@ -5,9 +5,11 @@ import TheRoadmapSidebar from './TheRoadmapSidebar.vue';
 
 </script>
 <template>
-    <div class="flex lg:flex-col">
-        <TheTitleSidebar class="w-1/3 lg:w-auto"  />
-        <CategoriesFilters class="w-1/3 lg:w-auto" />
-        <TheRoadmapSidebar class="w-1/3 lg:w-auto" />
+    <div class="flex flex-col">
+        <TheTitleSidebar  />
+        <div class="flex lg:block">
+            <CategoriesFilters  />
+            <TheRoadmapSidebar  />
+        </div>
     </div>
 </template>

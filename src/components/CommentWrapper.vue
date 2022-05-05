@@ -1,7 +1,7 @@
 <script setup>
 import { storeToRefs } from 'pinia';
 import { useData } from '../stores/data';
-import { ref } from 'vue'
+import { ref, watchEffect } from 'vue'
 import CurrentFeedback from './CurrentFeedback.vue';
 import Button from './buttons/Button.vue';
 import AddComment from './AddComment.vue'
@@ -18,16 +18,12 @@ const index = data.value.findIndex(e => e.id === parseInt(props.id))
 const replyParent = ref(null)
 const replyChildren = ref(null)
 const replyChildrenCheck = ref(null)
-const oko = ref(0)
-const sranko = (data) => {
-
-} 
 
 
 </script>
 <template>
 
-<div class="m-auto max-w-3xl">
+<div class="p-6 m-auto max-w-3xl lg:p-0">
     <div class="p-3 flex items-center lg:p-4 lg:pl-0 lg:pr-0 mb-8">
         <div class="">
             <p class="font-bold flex items-center cursor-pointer"
@@ -41,24 +37,24 @@ const sranko = (data) => {
         </router-link>
     </div>
     <section class="bg-custom-white rounded-xl mb-6 p-4">
-        <CurrentFeedback :comment = currentcomment @sumLengthOfComments="sranko"/>
+        <CurrentFeedback :comment = currentcomment />
     </section>
     <section class="bg-custom-white rounded-xl mb-6 p-4">
         <h3 class="font-bold text-lg mb-6">
-            Do uzupełnienia Comments
+           {{currentcomment.commentsLenght}} Comments
         </h3>
 
         <div class="grid grid-cols-12 mb-6 pb-6 border-b-2 border-b-custom-light-blue last:border-b-0 last:mb-0 " 
             v-for="(comment, commentsIndex) in currentcomment.comments" :key="comment.id">
-            <div class="col-span-1">
+            <div class="col-span-2 lg:col-span-1">
                 <img class="rounded-full w-9" :src="`/src/assets/${comment.user.image}`" />
             </div>
-            <div class="col-span-10">
+            <div class="col-span-8 lg:col-span-10">
                 <p class="font-bold">{{ comment.user.name }}</p>
                 <p class="mb-4">@{{ comment.user.username }}</p>
                 <p class="text-custom-grey">{{ comment.content }}</p>
             </div>
-            <div class="col-span-1 text-center">
+            <div class="col-span-2 lg:col-span-1 text-center">
                 <p class="font-bold text-custom-violet text-xs cursor-pointer"
                     @click="replyParent = comment.id, replyChildren = null">
                     Reply
