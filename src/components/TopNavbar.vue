@@ -36,12 +36,12 @@ const getValue = (value) => {
 .nested-enter-active, .nested-leave-active {
 	transition: all 0.3s ease-in-out;
 }
-.nested-leave-active {
-  transition-delay: 0.15s;
+.nested-enter-from {
+    opacity: 0;
+    transform: translateY(30px);
 }
-.nested-enter-from,
 .nested-leave-to {
-  transform: translateY(30px);
   opacity: 0;
+  transform: translateY(5px);
 }
 </style>

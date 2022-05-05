@@ -33,8 +33,7 @@ const router = createRouter({
       name: 'editFeedback',
       component: AddEditFeedback,
       props: true
-    }
-      
+    }  
     
   ]
 })

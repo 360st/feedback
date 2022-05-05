@@ -24,7 +24,7 @@ const add = () => {
     <section class="bg-custom-white rounded-xl mb-6 p-4" :class="{'pl-14': props.index}">
         <h3 v-if="!props.index" class="font-bold text-lg mb-6">Add Comment</h3>
         <form @submit.prevent="add">
-            <textarea v-model="text" class="bg-custom-light-blue rounded-lg p-4 w-full mb-4" placeholder="Type your comments here" maxlength="250"></textarea>
+            <textarea v-model="text" class="bg-custom-light-blue rounded-lg p-4 w-full mb-4" placeholder="Type your comments here" maxlength="250" required></textarea>
             <div class="flex items-center">
                 <span class="text-xs">{{ text.length }}/250</span>
                 <Button class="float-right ml-auto" :msg="!props.index ? 'Post Comment' : 'Reply Comment'" />

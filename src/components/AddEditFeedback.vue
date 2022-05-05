@@ -59,7 +59,7 @@ const add = () => {
                 <h2 class="font-bold text-lg mb-6">{{id ? 'Edit Feedback' : 'Create New Feedback'}}</h2>
                 <p class="font-bold text-custom-navy">Feedback Title</p>
                 <p class="mb-4">Add a short, descriptive headline </p>
-                <input v-model="feedbackData.title" class="bg-custom-light-blue w-full rounded p-2 pt-3 pb-3 mb-6" type="text" />
+                <input v-model="feedbackData.title" class="bg-custom-light-blue w-full rounded p-2 pt-3 pb-3 mb-6" type="text" required />
 
                 <p class="font-bold text-custom-navy">Category</p>
                 <p class="mb-4">Choose a category for your feedback </p>
@@ -75,7 +75,7 @@ const add = () => {
                 </div>
                 <p class="font-bold text-custom-navy">Feedback Details</p>
                 <p class="mb-4">Include any specific comments on what should be improved, added, etc. </p>
-                <textarea v-model="feedbackData.description" class="bg-custom-light-blue w-full rounded h-20 p-2 mb-6"></textarea>
+                <textarea v-model="feedbackData.description" class="bg-custom-light-blue w-full rounded h-20 p-2 mb-6" required></textarea>
                 
                 <div class="flex justify-end">
                     <Button @click="removeFeedback = true" v-show="id" class="mr-auto" msg="Delate" color="bg-custom-red" />
