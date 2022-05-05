@@ -82,7 +82,7 @@ const add = () => {
                     <router-link :to="{name: 'home'}">
                         <Button class="mr-4" msg="Cancel" color="bg-custom-grey" />
                     </router-link>
-                    <Button :msg="id ? 'Save Changes' : 'Add Feedback'" />
+                    <Button class="text-xs lg:text-sm" :msg="id ? 'Save Changes' : 'Add Feedback'" />
                 </div>
             </div>
         </form>

@@ -48,7 +48,7 @@ const replyChildrenCheck = ref(null)
         <div class="grid grid-cols-12 mb-6 pb-6 border-b-2 border-b-custom-light-blue last:border-b-0 last:mb-0 " 
             v-for="(comment, commentsIndex) in currentcomment.comments" :key="comment.id">
             <div class="col-span-2 lg:col-span-1">
-                <img class="rounded-full w-9" :src="`@/assets/${comment.user.image}`" />
+                <img class="rounded-full w-6 lg:w-9" :src="`/assets/${comment.user.image}`" />
             </div>
             <div class="col-span-8 lg:col-span-10">
                 <p class="font-bold">{{ comment.user.name }}</p>
@@ -71,16 +71,16 @@ const replyChildrenCheck = ref(null)
             </Transition>
 
             <div class="col-span-12" v-for="(replies, repliesIndex) in comment.replies" :key="replies.id">
-                <div class="grid grid-cols-12 mb-6 pb-6 mt-6 ml-8 pl-8 border-custom-light-blue border-l-2 last:border-b-0 last:mb-0">
-                    <div class="col-span-1">
-                        <img class="rounded-full w-9" :src="`@/assets/${replies.user.image}`" />
+                <div class="grid grid-cols-12 mb-6 pb-6 mt-6 ml-3 pl-3 lg:ml-8 lg:pl-8 border-custom-light-blue border-l-2 last:border-b-0 last:mb-0">
+                    <div class="col-span-2 lg:col-span-1">
+                        <img class="rounded-full w-6 lg:w-9" :src="`/assets/${replies.user.image}`" />
                     </div>
-                    <div class="col-span-10">
+                    <div class="col-span-8 lg:col-span-10">
                         <p class="font-bold">{{ replies.user.name }}</p>
                         <p class="mb-4">@{{ replies.user.username }}</p>
                         <p class="text-custom-grey"><span class="text-custom-purple font-bold">@{{replies.replyingTo}}</span> {{ replies.content }}</p>
                     </div>
-                    <div class="col-span-1 text-center">
+                    <div class="col-span-2 lg:col-span-1 text-center">
                         <p class="font-bold text-custom-violet text-xs cursor-pointer" 
                             @click="replyChildren = replies.id, replyChildrenCheck = repliesIndex, replyParent = null">
                             Reply
