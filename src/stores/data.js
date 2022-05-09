@@ -43,6 +43,7 @@ export const useData = defineStore({
       this.currentUser = Data.currentUser
       this.data.filter(e => e.comments === undefined).forEach(d => d.comments = [])
       this.calculateTheNumberOfComments()
+      console.log(this.data)
     },
     loadCategory() {
       this.categories = ["all", "UI", "UX", ...new Set(this.data.map(e => e.category))]

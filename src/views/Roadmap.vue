@@ -7,6 +7,7 @@ import Button from '../components/buttons/Button.vue';
 import CurrentRoadmap from '../components/CurrentRoadmap.vue';
 
 const { filterByStatus } = storeToRefs(useData())
+
 const arr2 = [
     {
         id: 1,
@@ -26,7 +27,7 @@ const arr2 = [
 ]
 const name = ref('planned')
 const color = ref('#f59f86')
-const width = ref(window.innerWidth);
+const screenWidth = ref(window.innerWidth);
 
 const change = (categorry) => {
     name.value = categorry.name
@@ -53,19 +54,19 @@ const change = (categorry) => {
     </div>
     <div class="p-6 grid grid-cols-12">
         <TransitionGroup name="nested">
-            <div v-if="width < 1024 ? name === arr2[0].name : arr2[0].name === arr2[0].name" class="col-span-12 lg:col-span-4 lg:mr-6">
+            <div v-if="screenWidth < 1024 ? name === arr2[0].name : arr2[0].name === arr2[0].name" class="col-span-12 lg:col-span-4 lg:mr-6">
                 <h3 class="text-lg font-bold">Planned ({{filterByStatus('planned').length}})</h3>
                 <p class="mb-6">Ideas prioritized for research </p>
                 <CurrentRoadmap v-for="comment in filterByStatus('planned')" :key="comment.id" :comment = comment border="border-custom-orange" bg="bg-custom-orange" />
             </div>
          
-            <div v-if="width < 1024 ? name === arr2[1].name : arr2[1].name === arr2[1].name" class="col-span-12 lg:col-span-4 lg:mr-6">
+            <div v-if="screenWidth < 1024 ? name === arr2[1].name : arr2[1].name === arr2[1].name" class="col-span-12 lg:col-span-4 lg:mr-6">
                 <h3 class="text-lg font-bold">In-Progress ({{filterByStatus('in-progress').length}})</h3>
                 <p class="mb-6">Currently being developed</p>
                 <CurrentRoadmap v-for="comment in filterByStatus('in-progress')" :key="comment.id" :comment = comment border="border-custom-purple" bg="bg-custom-purple" />          
             </div>
  
-            <div v-if="width < 1024 ? name === arr2[2].name : arr2[2].name === arr2[2].name" class="col-span-12 lg:col-span-4">
+            <div v-if="screenWidth < 1024 ? name === arr2[2].name : arr2[2].name === arr2[2].name" class="col-span-12 lg:col-span-4">
                 <h3 class="text-lg font-bold">Live ({{filterByStatus('live').length}})</h3>
                 <p class="mb-6">Released features</p>
                 <CurrentRoadmap v-for="comment in filterByStatus('live')" :key="comment.id" :comment = comment border="border-custom-blue" bg="bg-custom-blue" />           
