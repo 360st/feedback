@@ -41,7 +41,7 @@ const change = (categorry) => {
             <router-link class="font-bold flex items-center" :to="{name: 'home'}"><img class="mr-2" src="@/assets/shared/icon-arrow-left.svg" /> <span class="text-custom-white" >Go back</span></router-link>
             <span class="hidden text-custom-white font-bold text-xl mr-10 md:inline">Roadmap</span>
         </div>
-        <router-link class="ml-auto" to="/add"> <Button msg="+ Add Feedback" /> </router-link>
+        <router-link class="ml-auto" to="/add-feedback"> <Button msg="+ Add Feedback" /> </router-link>
     </div>
     <div class="bg-custom-white shadow lg:hidden">
         <ul class="flex text-center">
